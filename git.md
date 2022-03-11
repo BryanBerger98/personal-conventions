@@ -1,4 +1,4 @@
-[<= Back](readme.md)
+[<= Back](README.md)
 
 # GIT conventions
 
