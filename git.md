@@ -9,7 +9,7 @@
 * **development**: Main development branch. Guide line for development. NO DIRECT DEVELOPMENT ON THIS BRANCH. Needs reviews to be merged with `preprod`.
 * **feature/bug/…**: Specific branches created from `development` to dev features, fix bugs, ...
 
-### Merge direction
+### Merge direction:
 `feature/bug` => `development` => `preprod`=> `main`
 
 ## Commit rules:
@@ -33,7 +33,7 @@ type(scope): description - version
 * **upgrade**: Module or dependency updates
 * **update**: other updates
 
-### Scope
+### Scope:
 
 Define the project part which is affected by the commit.
 
@@ -45,7 +45,7 @@ update(auth & blog) # Modifications have been made on both Authentication and Bl
 ```
 **ATTENTION**: If a commit concerns **more than 3 modules**, the scope would be `app`.
 
-### Description
+### Description:
 
 A short description about the changes have been made.
 
@@ -55,7 +55,7 @@ update(auth): change ... # NOT "changed" or "changes"
 ```
 The decription should start with lowercase nad end without dot.
 
-### Version
+### Version:
 
 The project version concerned by the changes. For example: 4.3.12
 
