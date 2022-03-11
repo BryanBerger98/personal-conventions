@@ -3,7 +3,7 @@
 # GIT conventions
 
 ## Branches:
-* **main**: Production branch. Must only merge via GitHub or GitLab. Needs reviews and tests to be merged.
+* **main**: Production branch. Should only receive merge requests via GitHub or GitLab, not from local GIT CLI. Needs reviews and tests to be merged.
 * **hotfixes**: Branch for emergency bug fixes from production branch.
 * **preprod**: (Optional for small or personal projects) Pre-production branch. Real conditions environment. Needs reviews to me merged with `main`.
 * **development**: Main development branch. Guide line for development. NO DIRECT DEVELOPMENT ON THIS BRANCH. Needs reviews to be merged with `preprod`.
