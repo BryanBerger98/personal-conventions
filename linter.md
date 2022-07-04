@@ -57,7 +57,9 @@ module.exports = {
         } ],
         'no-multi-spaces': 'warn',
         'no-multiple-empty-lines': 'warn',
+        'no-empty-function': 'warn',
         'require-await': 'error',
+        'template-curly-spacing': [ 'warn', 'always' ],
         // Conditions
         'default-case': 'warn',
         'default-case-last': 'warn',
