@@ -1,5 +1,7 @@
 # VSCode Settings
 
+[<= Back](../README.md)
+
 ## `settings.json`
 
 ```JSON

@@ -1,0 +1,27 @@
+# Markdown lint
+
+[<= Back](../README.md)
+
+Checkout the GitHub Repository of Markdown Lint ➡️ https://github.com/updownpress/markdown-lint
+
+```json
+{
+	"line-length": false,
+	"list-marker-space": {
+		"ol_multi": 3,
+		"ol_single": 3,
+		"ul_multi": 3,
+		"ul_single": 3
+	},
+	"ul-indent": {
+		"indent": 4
+	},
+	"no-hard-tabs": {
+		"code_blocks": false,
+		"spaces_per_tab": 4
+	},
+	"no-inline-html": false,
+	"no-blanks-blockquote": false,
+	"no-bare-urls": false
+}
+```

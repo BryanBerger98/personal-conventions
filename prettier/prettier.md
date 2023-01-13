@@ -1,6 +1,8 @@
 # Prettier
 
-## `.prettierrc.json`:
+[<= Back](../README.md)
+
+## `.prettierrc.json`
 
 ```JSON
 {

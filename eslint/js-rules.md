@@ -1,4 +1,9 @@
+# JavaScript ESLint rules
+
+[<= Back](../README.md)
+
 ESLint config:
+
 ```Javascript
 // ES5 linter
 module.exports = {
@@ -88,7 +93,7 @@ module.exports = {
 };
 ```
 
-## ESLint for React:
+## ESLint for React
 
 ```javascript
 module.exports = {
@@ -200,4 +205,3 @@ module.exports = {
 		},
 	},
 };
-

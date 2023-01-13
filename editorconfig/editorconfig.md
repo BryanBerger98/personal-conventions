@@ -1,0 +1,21 @@
+# Editor config
+
+[<= Back](../README.md)
+
+```editorconfig
+root = true
+
+[*]
+charset = utf-8
+indent_style = tab
+indent_size = 4
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+[*.ts]
+quote_type = single
+
+[*.md]
+max_line_length = off
+trim_trailing_whitespace = false
+```
