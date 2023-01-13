@@ -14,7 +14,7 @@ A documentation gathering my personal conventions and practices.
 
 ## Prettier
 
-*   [VS Code settings](prettier/prettier.md)
+*   [Prettier config](prettier/prettier.md)
 
 ## Git
 
