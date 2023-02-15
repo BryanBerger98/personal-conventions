@@ -28,7 +28,7 @@ A documentation gathering my personal conventions and practices.
 
 ## JavaScript & TypeScript config
 
-*   [jsconfig.json](json-config/js-config.md)
+*   [jsconfig.json for React](json-config/react-js-config/README.md)
 *   [tsconfig.json](ts)
 
 ## Markdown
