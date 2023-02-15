@@ -24,6 +24,7 @@ A documentation gathering my personal conventions and practices.
 
 *   [JavaScript rules](eslint/js-rules.md)
 *   [React rules](eslint/react-rules.md)
+*   [Next.js TypeScript rules](eslint/next-ts-rules.md)
 
 ## JavaScript & TypeScript config
 

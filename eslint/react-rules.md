@@ -2,7 +2,7 @@
 
 [<= Back](../README.md)
 
-The following `javascript` should be set into the `.eslintrc.cjs` file:
+The following `javascript` code should be set into the `.eslintrc.cjs` file:
 
 ```js
 module.exports = {
