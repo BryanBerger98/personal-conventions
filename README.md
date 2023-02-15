@@ -34,3 +34,7 @@ A documentation gathering my personal conventions and practices.
 ## Markdown
 
 *   [Markdown lint](markdown/markdownlint.md)
+
+## Build
+
+*   [Vite](build/vite-config.md)
