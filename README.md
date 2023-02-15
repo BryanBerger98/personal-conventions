@@ -25,6 +25,11 @@ A documentation gathering my personal conventions and practices.
 *   [JavaScript rules](eslint/js-rules.md)
 *   [React rules](eslint/react-rules.md)
 
+## JavaScript & TypeScript config
+
+*   [jsconfig.json](json-config/js-config.md)
+*   [tsconfig.json](ts)
+
 ## Markdown
 
 *   [Markdown lint](markdown/markdownlint.md)

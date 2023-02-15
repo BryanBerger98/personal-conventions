@@ -6,10 +6,6 @@
 
 ```JSON
 {
-	// WINDOW
-	"window.zoomLevel": 1,
-
-	// EXTENSIONS
 	"extensions.ignoreRecommendations": true,
 
 	// WORKBENCH
@@ -64,13 +60,20 @@
 		"editor.formatOnSave": false,
 		"editor.codeActionsOnSave": {
 			"source.fixAll": true
-		}
+		},
+		"javascript.preferences.quoteStyle": "single"
 	},
 	"[javascriptreact]": {
 		"editor.formatOnSave": false,
 		"editor.codeActionsOnSave": {
-			"source.fixAll": true
-		}
+			"source.fixAll": true,
+			"source.organizeImports": false
+		},
+		"javascript.autoClosingTags": true,
+		"javascript.preferences.quoteStyle": "single",
+		"javascript.preferences.jsxAttributeCompletionStyle": "none",
+		"javascript.preferences.importModuleSpecifier": "shortest",
+		"javascript.preferences.importModuleSpecifierEnding": "minimal"
 	},
 	"[typescript]": {
 		"editor.formatOnSave": false,
@@ -138,6 +141,9 @@
 	},
 	"emmet.triggerExpansionOnTab": false,
 
+	// TAILWIND
+	"tailwindCSS.emmetCompletions": true,
+
 	// ESLINT
 	"eslint.workingDirectories": [{ "mode": "auto" }],
 	"eslint.alwaysShowStatus": true,
@@ -146,7 +152,7 @@
 	"files.associations": {
 		"*.ejs": "html",
 		"*.tmpl": "html",
-		"*.css": "css",
+		"*.css": "tailwindcss",
 		"*.scss": "scss",
 		"*.js": "javascript",
 		"*.jsx": "javascriptreact",
@@ -188,6 +194,8 @@
 	"codesnap.boxShadow": "rgba(0, 0, 0, 0.55) 0px 10px 32px",
 	"codesnap.showWindowTitle": false,
 	"codesnap.roundedCorners": true,
-	"task.allowAutomaticTasks": "off"
+	"codesnap.showWindowControls": true,
+	"task.allowAutomaticTasks": "off",
+	"window.zoomLevel": 2
 }
 ```
