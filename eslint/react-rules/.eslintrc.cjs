@@ -1,10 +1,3 @@
-# ESLint rules for React projects
-
-[<= Back](../README.md)
-
-The following `javascript` code should be set into the `.eslintrc.cjs` file:
-
-```js
 module.exports = {
 	'env': {
 		'browser': true,
@@ -206,4 +199,3 @@ module.exports = {
 		}, 
 	},
 };
-```
