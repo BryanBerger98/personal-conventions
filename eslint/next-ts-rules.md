@@ -2,41 +2,51 @@
 
 [<= Back](../README.md)
 
-The following `json` object should be set into the `.eslintrc` file:
+## Packages that I use
+
+*   `@typescript-eslint/eslint-plugin`
+*   `@typescript-eslint/parser`
+*   `eslint`
+*   `eslint-import-resolver-typescript`
+*   `eslint-plugin-import`
+*   `eslint-plugin-jsx-a11y`
+*   `eslint-plugin-react`
+*   `eslint-plugin-react-hooks`
+*   `eslint-plugin-react-refresh`
+
+Install the following packages as dev dependencies:
+
+```bash
+npm i -D @typescript-eslint/eslint-plugin @typescript-eslint/parser eslint eslint-import-resolver-typescript eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-react eslint-plugin-react-hooks eslint-plugin-react-refresh
+```
+
+## Config
+
+The following `json` object should be set into the `.eslintrc` file at the root directory:
 
 ```json
 {
 	"plugins": ["@typescript-eslint"],
 	"overrides": [
 		{
-			"files": ["**/*.ts", "**/*.tsx"],
-			"extends": [
-				"plugin:@typescript-eslint/recommended",
-				"plugin:react-hooks/recommended"
-			],
+			"files": ["**/*.ts", "**/*.tsx", "./*.js", "./*.mjs"],
+			"extends": ["plugin:@typescript-eslint/recommended", "plugin:react-hooks/recommended"],
 			"parser": "@typescript-eslint/parser",
-			"plugins": [
-				"@typescript-eslint",
-				"react",
-				"jsx-a11y",
-				"react-hooks"
-			],
+			"parserOptions": {
+				"ecmaVersion": "latest"
+			},
+			"env": {
+				"browser": true,
+				"node": true,
+				"es6": true
+			},
+			"plugins": ["@typescript-eslint", "react", "jsx-a11y", "react-hooks", "import"],
 			"rules": {
-				"indent": [
-					"warn",
-					4,
-					{
-						"SwitchCase": 1
-					}
-				],
-				"no-func-assign": "error",
-				"no-console": "warn",
-				"no-magic-numbers": "off",
 				// Syntax
+				"indent": ["warn", "tab", { "SwitchCase": 1 }],
 				"semi": ["warn", "always"],
 				"quotes": ["warn", "single"],
 				"linebreak-style": ["warn", "unix"],
-				"object-curly-spacing": ["warn", "always"],
 				"array-bracket-spacing": ["warn", "always"],
 				"computed-property-spacing": ["warn", "always"],
 				"comma-dangle": [
@@ -49,6 +59,7 @@ The following `json` object should be set into the `.eslintrc` file:
 						"functions": "never"
 					}
 				],
+				"comma-spacing": ["warn", { "before": false, "after": true }],
 				"arrow-spacing": "warn",
 				"key-spacing": [
 					"warn",
@@ -64,12 +75,6 @@ The following `json` object should be set into the `.eslintrc` file:
 				"require-await": "error",
 				"template-curly-spacing": ["warn", "always"],
 				"brace-style": ["warn", "1tbs"],
-				"no-param-reassign": [
-					"error",
-					{
-						"props": false
-					}
-				],
 				"prefer-destructuring": [
 					"warn",
 					{
@@ -79,16 +84,19 @@ The following `json` object should be set into the `.eslintrc` file:
 						},
 						"AssignmentExpression": {
 							"array": true,
-							"object": false
+							"object": true
 						}
 					},
-					{
-						"enforceForRenamedProperties": false
-					}
+					{ "enforceForRenamedProperties": false }
 				],
 				"one-var-declaration-per-line": ["error", "always"],
 				"one-var": ["error", "never"],
+				"rest-spread-spacing": ["warn", "never"],
+				"no-param-reassign": "error",
+				"no-constant-binary-expression": "error",
+				"no-new-native-nonconstructor": "error",
 				// Objects
+				"object-curly-spacing": ["warn", "always"],
 				"object-property-newline": "warn",
 				"object-curly-newline": [
 					"warn",
@@ -97,28 +105,36 @@ The following `json` object should be set into the `.eslintrc` file:
 							"multiline": true,
 							"minProperties": 2
 						},
-						"ObjectPattern": { "multiline": true },
+						"ObjectPattern": "never",
 						"ImportDeclaration": "never",
 						"ExportDeclaration": {
 							"multiline": true,
-							"minProperties": 3
+							"minProperties": 4
 						}
 					}
 				],
 				"prefer-object-has-own": "warn",
 				"prefer-object-spread": "warn",
+				"object-shorthand": "warn",
+				// Functions
+				"func-names": ["warn", "as-needed"],
+				"no-func-assign": "error",
 				// Conditions
 				"default-case": "warn",
 				"default-case-last": "warn",
 				"no-duplicate-case": "warn",
 				"no-constant-condition": "warn",
+				"no-self-compare": "error",
+				// Loops
+				"for-direction": "warn",
+				"no-unmodified-loop-condition": "error",
 				// Variables and constants
 				"no-var": "error",
-				"no-unused-vars": "off",
 				"no-const-assign": "error",
 				"no-multi-assign": "warn",
 				"no-self-assign": ["warn", { "props": true }],
-				// Constructors
+				"no-use-before-define": "warn",
+				// Classes and constructors
 				"new-cap": [
 					"warn",
 					{
@@ -126,44 +142,173 @@ The following `json` object should be set into the `.eslintrc` file:
 						"newIsCap": true
 					}
 				],
+				"no-constructor-return": "error",
+				"no-unused-private-class-members": "warn",
+				// Async and promises
+				"no-promise-executor-return": "error",
 				// Text
 				"valid-typeof": "error",
+				"no-template-curly-in-string": "error",
+				// Imports
+				"import/no-unresolved": "error",
+				"import/order": [
+					"warn",
+					{
+						"groups": ["builtin", "external", "internal", "parent", "sibling", "index", "unknown"],
+						"pathGroups": [
+							{
+								"pattern": "{.,..}/*.css",
+								"group": "sibling",
+								"position": "after"
+							}
+						],
+						"alphabetize": {
+							"order": "asc",
+							"caseInsensitive": true
+						},
+						"newlines-between": "always"
+					}
+				],
+				// "import/no-unused-modules": [
+				// 	1,
+				// 	{
+				// 		"unusedExports": true,
+				// 		"missingExports": true,
+				// 		"ignoreExports": ["./tailwind.config.js"]
+				// 	}
+				// ],
 				// ES6
 				"no-duplicate-imports": ["error"],
 				"no-class-assign": "error",
 				// React
-				"react/prop-types": 1,
 				"react/react-in-jsx-scope": "off",
-				"react/jsx-filename-extension": [1, { "extensions": [".tsx"] }],
-				"react/forbid-prop-types": [1, { "forbid": ["array", "any"] }],
-				"react/no-access-state-in-setstate": "error",
-				"react/jsx-one-expression-per-line": "off",
-				"react/destructuring-assignment": "warn",
-				"react/no-unescaped-entities": "off",
-				"react/jsx-props-no-spreading": "off",
-				"react/state-in-constructor": [1, "always"],
 				"react/jsx-uses-react": "off",
+				"react/jsx-filename-extension": ["error", { "extensions": [".jsx", ".tsx"] }],
 				"react/jsx-uses-vars": "warn",
+				"react/no-unescaped-entities": "warn",
+				"react/destructuring-assignment": "warn",
+				"react/jsx-one-expression-per-line": "off",
 				"react/function-component-definition": [
-					1,
+					"warn",
 					{
 						"namedComponents": "arrow-function",
 						"unamedComponents": "arrow-function"
 					}
 				],
-				"react/jsx-max-props-per-line": [1, { "maximum": 1 }],
-				"react/jsx-first-prop-new-line": [1, "multiline"],
-				"react/jsx-closing-bracket-location": [1, "tag-aligned"],
-				"react/jsx-curly-spacing": [1, { "when": "always" }],
+				"react/jsx-closing-bracket-location": ["warn", "tag-aligned"],
+				"react/jsx-closing-tag-location": "warn",
+				"react/jsx-curly-brace-presence": "warn",
+				"react/jsx-curly-newline": [
+					"warn",
+					{
+						"multiline": "consistent",
+						"singleline": "forbid"
+					}
+				],
+				"react/jsx-curly-spacing": [
+					"warn",
+					{
+						"when": "always",
+						"children": true
+					}
+				],
+				"react/button-has-type": "warn",
+				"react/jsx-boolean-value": "warn",
+				"react/hook-use-state": "warn",
+				"react/jsx-fragments": "warn",
+				"react/jsx-handler-names": "off",
+				"react/jsx-pascal-case": "warn",
+				"react/jsx-no-leaked-render": "error",
+				"react/jsx-no-constructed-context-values": "error",
+				"react/jsx-no-comment-textnodes": "warn",
+				"react/jsx-indent": [
+					"warn",
+					"tab",
+					{
+						"indentLogicalExpressions": true,
+						"checkAttributes": true
+					}
+				],
+				"react/jsx-no-bind": ["warn", { "allowArrowFunctions": true }],
+				"react/jsx-wrap-multilines": "warn",
+				"react/no-array-index-key": "error",
+				"react/no-danger": "error",
+				"react/no-deprecated": "error",
+				"react/no-multi-comp": "off",
+				"react/no-this-in-sfc": "error",
+				"react/no-typos": "error",
+				"react/no-unstable-nested-components": "error",
+				"react/no-unused-state": "warn",
+				// React props
+				"react/no-children-prop": "error",
+				"react/jsx-props-no-multi-spaces": "warn",
+				"react/jsx-sort-props": [
+					"warn",
+					{
+						"shorthandLast": true,
+						"callbacksLast": true,
+						"reservedFirst": ["key"]
+					}
+				],
+				"react/jsx-indent-props": [
+					"warn",
+					{
+						"indentMode": "tab",
+						"ignoreTernaryOperator": true
+					}
+				],
+				"react/jsx-no-duplicate-props": "error",
+				"react/prop-types": "off",
+				"react/no-unused-prop-types": "warn",
+				"react/forbid-prop-types": "warn",
+				"react/boolean-prop-naming": ["error", { "rule": "^(is|has|with)[A-Z]([A-Za-z0-9]?)+", "validateNested": true }],
+				"react/jsx-max-props-per-line": ["warn", { "maximum": 1 }],
+				"react/jsx-first-prop-new-line": ["warn", "multiline"],
+				"react/jsx-props-no-spreading": "off",
+				"react/require-default-props": "off",
+				// React classes
+				"react/prefer-es6-class": "error",
+				"react/state-in-constructor": ["warn", "always"],
+				"react/no-access-state-in-setstate": "warn",
+				"react/no-arrow-function-lifecycle": "warn",
+				"react/no-did-mount-set-state": "error",
+				"react/no-did-update-set-state": "error",
+				"react/no-invalid-html-attribute": "error",
+				"react/no-redundant-should-component-update": "error",
+				"react/no-unused-class-component-methods": "warn",
+				// React hooks
+				"react-hooks/rules-of-hooks": "off",
 				// JSX
+				"jsx-quotes": ["warn", "prefer-double"],
 				"jsx-a11y/no-static-element-interactions": "error",
 				"jsx-a11y/anchor-is-valid": "off",
 				"jsx-a11y/mouse-events-have-key-events": "off",
 				"jsx-a11y/click-events-have-key-events": "off",
 				"jsx-a11y/no-noninteractive-element-interactions": "off",
 				// TypeScript
-				"@typescript-eslint/no-unused-vars": ["warn"],
-				"@typescript-eslint/object-curly-spacing": ["warn", "always"]
+				"@typescript-eslint/no-unused-vars": "warn",
+				"@typescript-eslint/object-curly-spacing": ["warn", "always"],
+				"@typescript-eslint/no-explicit-any": "off",
+				"@typescript-eslint/ban-types": [
+					"error",
+					{
+						"types": {
+							"{}": false
+						},
+						"extendDefaults": true
+					}
+				]
+			},
+			"settings": {
+				"import/extensions": [".tsx", ".ts"],
+				"import/parsers": {
+					"@typescript-eslint/parser": [".ts", ".tsx"]
+				},
+				"import/resolver": {
+					"typescript": {
+						"project": "."
+					}
+				}
 			}
 		}
 	]
