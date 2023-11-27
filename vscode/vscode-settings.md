@@ -8,6 +8,11 @@
 {
 	"extensions.ignoreRecommendations": true,
 
+	// WINDOW
+	"window.zoomLevel": 2,
+	// "window.autoDetectColorScheme": true,
+	// "window.autoDetectHighContrast": true,
+
 	// WORKBENCH
 	"workbench.productIconTheme": "fluent-icons",
 	"workbench.iconTheme": "vscode-icons",
@@ -15,7 +20,6 @@
 	"workbench.tree.indent": 12,
 	"workbench.tree.renderIndentGuides": "always",
 	"workbench.editor.enablePreview": false,
-	"workbench.colorTheme": "One Dark Pro Flat",
 	"workbench.editor.highlightModifiedTabs": true,
 
 	// TERMINAL
@@ -66,8 +70,7 @@
 	"[javascriptreact]": {
 		"editor.formatOnSave": false,
 		"editor.codeActionsOnSave": {
-			"source.fixAll": true,
-			"source.organizeImports": false
+			"source.fixAll": true
 		},
 		"javascript.autoClosingTags": true,
 		"javascript.preferences.quoteStyle": "single",
@@ -79,13 +82,19 @@
 		"editor.formatOnSave": false,
 		"editor.codeActionsOnSave": {
 			"source.fixAll": true
-		}
+		},
+		"typescript.preferences.quoteStyle": "single"
 	},
 	"[typescriptreact]": {
 		"editor.formatOnSave": false,
 		"editor.codeActionsOnSave": {
 			"source.fixAll": true
-		}
+		},
+		"typescript.autoClosingTags": true,
+		"typescript.preferences.quoteStyle": "single",
+		"typescript.preferences.jsxAttributeCompletionStyle": "none",
+		"typescript.preferences.importModuleSpecifier": "shortest",
+		"typescript.preferences.importModuleSpecifierEnding": "minimal"
 	},
 	"[html]": {
 		"editor.formatOnSave": true
@@ -146,7 +155,6 @@
 
 	// ESLINT
 	"eslint.workingDirectories": [{ "mode": "auto" }],
-	"eslint.alwaysShowStatus": true,
 
 	// FILES
 	"files.associations": {
@@ -178,24 +186,88 @@
 
 	// OTHERS
 	"security.workspace.trust.untrustedFiles": "open",
-	"go.addTags": {
-		"tags": "json",
-		"options": "json=omitempty",
-		"promptForTags": false,
-		"transform": "snakecase",
-		"template": ""
-	},
+	// "go.addTags": {
+	// 	"tags": "json",
+	// 	"options": "json=omitempty",
+	// 	"promptForTags": false,
+	// 	"transform": "snakecase",
+	// 	"template": ""
+	// },
 	"vsicons.dontShowNewVersionMessage": true,
 	"vsicons.presets.hideExplorerArrows": false,
-	"liveshare.openSharedServers": false,
-	"liveshare.autoShareServers": false,
-	"liveServer.settings.donotShowInfoMsg": true,
+	// "liveshare.openSharedServers": false,
+	// "liveshare.autoShareServers": false,
+	// "liveServer.settings.donotShowInfoMsg": true,
 	"codesnap.backgroundColor": "rgba(0, 0, 0, 0)",
 	"codesnap.boxShadow": "rgba(0, 0, 0, 0.55) 0px 10px 32px",
 	"codesnap.showWindowTitle": false,
 	"codesnap.roundedCorners": true,
-	"codesnap.showWindowControls": true,
+	"codesnap.showWindowControls": false,
 	"task.allowAutomaticTasks": "off",
-	"window.zoomLevel": 2
+	"better-comments.tags": [
+		{
+			"tag": "!",
+			"color": "#FF2D00",
+			"strikethrough": false,
+			"underline": false,
+			"backgroundColor": "transparent",
+			"bold": false,
+			"italic": false
+		},
+		{
+			"tag": "?",
+			"color": "#3498DB",
+			"strikethrough": false,
+			"underline": false,
+			"backgroundColor": "transparent",
+			"bold": false,
+			"italic": false
+		},
+		{
+			"tag": "//",
+			"color": "#474747",
+			"strikethrough": true,
+			"underline": false,
+			"backgroundColor": "transparent",
+			"bold": false,
+			"italic": false
+		},
+		{
+			"tag": "todo",
+			"color": "#FF8C00",
+			"strikethrough": false,
+			"underline": false,
+			"backgroundColor": "transparent",
+			"bold": false,
+			"italic": false
+		},
+		{
+			"tag": "fixme",
+			"color": "#ffde1f",
+			"strikethrough": false,
+			"underline": false,
+			"backgroundColor": "transparent",
+			"bold": false,
+			"italic": false
+		},
+		{
+			"tag": "*",
+			"color": "#98C379",
+			"strikethrough": false,
+			"underline": false,
+			"backgroundColor": "transparent",
+			"bold": false,
+			"italic": false
+		}
+	],
+	"github.copilot.enable": {
+		"*": true,
+		"plaintext": false,
+		"markdown": false,
+		"scminput": false
+	},
+	"git.confirmSync": false,
+	"window.titleBarStyle": "custom",
+	"workbench.colorTheme": "One Dark Pro"
 }
 ```
